@@ -10,6 +10,6 @@ user_item_rating_community_communitylength.csv:
 关于代码：  
 usercf_social.py：可计算基于用户的传统协同过滤算法、加入惩罚和考虑社交网络信息后的推荐正确率，回归率和覆盖率。  
 usercf_community.py ：可计算考虑社区信息后的推荐正确率，回归率和覆盖率。  
-Louvain.py:使用Louvain算法发现用户社交网络中的社区。  
+Louvain.py：使用Louvain算法发现用户社交网络中的社区。  
 personalrank.py：基于图的随机游走推荐算法。  
 plotdata.py, draw.py和drawcommunity.py分别是数据集信息，社交网络信息和社区信息的可视化。  
