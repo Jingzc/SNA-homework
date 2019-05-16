@@ -119,8 +119,8 @@ class UserBasedCF(object):
                 for v in users:
                     if u == v:
                         continue
-                    usersim_mat[u][v] += 1/math.log(1+len(users))
-                    #usersim_mat[u][v] += 1
+                    #usersim_mat[u][v] += 1/math.log(1+len(users))
+                    usersim_mat[u][v] += 1
                     #给同一部电影打过分的用户之间建立关系
            
         for user,friend in self.socialset.items():
@@ -149,7 +149,7 @@ class UserBasedCF(object):
                 elif u not in self.socialset or v not in self.socialset:
                     usersim_mat[u][v] = (1-a)*count / math.sqrt(len(self.trainset[u]) * len(self.trainset[v]))
                 else:                
-                    usersim_mat[u][v] = (1-a)*count / math.sqrt(len(self.trainset[u]) * len(self.trainset[v]))+a*usersimf_mat[u][v]/math.sqrt(len(self.socialset[u])*len(self.socialset[v]))             
+                    usersim_mat[u][v] = (1-a)*count / math.sqrt(len(self.trainset[u]) * len(self.trainset[v]))#+a*usersimf_mat[u][v]/math.sqrt(len(self.socialset[u])*len(self.socialset[v]))             
                 simfactor_count += 1
                 if simfactor_count % PRINT_STEP == 0:
                     print ('calculating user similarity factor(%d)' %
